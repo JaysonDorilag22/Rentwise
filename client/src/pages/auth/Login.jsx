@@ -77,20 +77,20 @@ const Login = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-green-50 to-green-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <div className="mx-auto h-12 w-12 bg-primary-600 rounded-lg flex items-center justify-center">
+          <div className="mx-auto h-12 w-12 bg-green-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-xl">R</span>
           </div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Sign in to your account
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}
             <Link
               to="/register"
-              className="font-medium text-primary-600 hover:text-primary-500 dark:text-primary-400"
+              className="font-medium text-green-600 hover:text-green-500"
             >
               create a new account
             </Link>
@@ -101,7 +101,7 @@ const Login = () => {
           <div className="space-y-4">
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email address
               </label>
               <div className="mt-1 relative">
@@ -118,19 +118,19 @@ const Login = () => {
                   className={`appearance-none relative block w-full pl-10 pr-3 py-2 border ${
                     errors.email 
                       ? 'border-red-300 focus:border-red-500 focus:ring-red-500' 
-                      : 'border-gray-300 dark:border-gray-600 focus:border-primary-500 focus:ring-primary-500'
-                  } placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-1 focus:z-10 sm:text-sm bg-white dark:bg-gray-800`}
+                      : 'border-gray-300 focus:border-green-500 focus:ring-green-500'
+                  } placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-1 focus:z-10 sm:text-sm bg-white`}
                   placeholder="Enter your email"
                 />
               </div>
               {errors.email && (
-                <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</p>
+                <p className="mt-1 text-sm text-red-600">{errors.email}</p>
               )}
             </div>
 
             {/* Password Field */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Password
               </label>
               <div className="mt-1 relative">
@@ -147,8 +147,8 @@ const Login = () => {
                   className={`appearance-none relative block w-full pl-10 pr-10 py-2 border ${
                     errors.password 
                       ? 'border-red-300 focus:border-red-500 focus:ring-red-500' 
-                      : 'border-gray-300 dark:border-gray-600 focus:border-primary-500 focus:ring-primary-500'
-                  } placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-1 focus:z-10 sm:text-sm bg-white dark:bg-gray-800`}
+                      : 'border-gray-300 focus:border-green-500 focus:ring-green-500'
+                  } placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-1 focus:z-10 sm:text-sm bg-white`}
                   placeholder="Enter your password"
                 />
                 <button
@@ -164,7 +164,7 @@ const Login = () => {
                 </button>
               </div>
               {errors.password && (
-                <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.password}</p>
+                <p className="mt-1 text-sm text-red-600">{errors.password}</p>
               )}
             </div>
           </div>
@@ -173,7 +173,7 @@ const Login = () => {
             <div className="text-sm">
               <Link
                 to="/forgot-password"
-                className="font-medium text-primary-600 hover:text-primary-500 dark:text-primary-400"
+                className="font-medium text-green-600 hover:text-green-500"
               >
                 Forgot your password?
               </Link>
@@ -184,7 +184,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {loading ? (
                 <div className="spinner"></div>
@@ -195,11 +195,11 @@ const Login = () => {
           </div>
 
           <div className="text-center">
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-600">
               Don't have an account?{' '}
               <Link
                 to="/register"
-                className="font-medium text-primary-600 hover:text-primary-500 dark:text-primary-400"
+                className="font-medium text-green-600 hover:text-green-500"
               >
                 Sign up here
               </Link>
