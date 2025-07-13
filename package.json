@@ -1,0 +1,30 @@
+{
+  "name": "rentwise",
+  "version": "1.0.0",
+  "description": "A modern rental listing web application for the Philippines",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "heroku-postbuild": "npm run install-all && npm run build"
+  },
+  "keywords": [
+    "rental",
+    "property",
+    "philippines",
+    "mern",
+    "react",
+    "node",
+    "mongodb"
+  ],
+  "author": "RentWise Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
