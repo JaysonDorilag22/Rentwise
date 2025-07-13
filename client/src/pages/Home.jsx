@@ -1,119 +1,194 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiSearch, FiMapPin, FiTrendingUp, FiUsers, FiHome, FiStar } from 'react-icons/fi';
+import { 
+  FiSearch, 
+  FiMapPin, 
+  FiTrendingUp, 
+  FiUsers, 
+  FiHome, 
+  FiStar, 
+  FiArrowRight,
+  FiCheckCircle,
+  FiPlay,
+  FiShield,
+  FiClock,
+  FiThumbsUp
+} from 'react-icons/fi';
 
 const Home = () => {
   const features = [
     {
       icon: FiSearch,
-      title: 'Smart Search',
-      description: 'Find your perfect rental with advanced filters and intelligent matching.',
+      title: 'AI-Powered Search',
+      description: 'Our intelligent search algorithm learns your preferences to show you the most relevant properties first.',
+      gradient: 'from-blue-500 to-cyan-500',
     },
     {
       icon: FiMapPin,
-      title: 'Map Integration',
-      description: 'Explore properties on an interactive map with neighborhood insights.',
+      title: 'Interactive Maps',
+      description: 'Explore neighborhoods with detailed maps showing nearby amenities, transport, and safety ratings.',
+      gradient: 'from-green-500 to-emerald-500',
     },
     {
       icon: FiTrendingUp,
-      title: 'Market Insights',
-      description: 'Get real-time rent trends and pricing analytics for better decisions.',
+      title: 'Real-Time Analytics',
+      description: 'Get live market insights, price predictions, and investment opportunities in your area.',
+      gradient: 'from-purple-500 to-pink-500',
     },
     {
-      icon: FiUsers,
-      title: 'Trusted Community',
-      description: 'Connect with verified landlords and tenants in a secure environment.',
+      icon: FiShield,
+      title: 'Verified Listings',
+      description: 'Every property is verified and every landlord is background-checked for your safety.',
+      gradient: 'from-orange-500 to-red-500',
     },
   ];
 
   const stats = [
-    { number: '10,000+', label: 'Properties Listed' },
-    { number: '5,000+', label: 'Happy Tenants' },
-    { number: '2,000+', label: 'Verified Landlords' },
-    { number: '50+', label: 'Cities Covered' },
+    { number: '10,000+', label: 'Active Properties', icon: FiHome },
+    { number: '5,000+', label: 'Happy Tenants', icon: FiUsers },
+    { number: '2,000+', label: 'Verified Landlords', icon: FiCheckCircle },
+    { number: '50+', label: 'Cities Covered', icon: FiMapPin },
+  ];
+
+  const testimonials = [
+    {
+      name: 'Maria Santos',
+      role: 'Software Engineer',
+      avatar: 'MS',
+      content: 'RentWise completely transformed my apartment hunting experience. Found my dream place in BGC within a week!',
+      rating: 5,
+      location: 'Bonifacio Global City'
+    },
+    {
+      name: 'John Rodriguez',
+      role: 'Property Investor',
+      avatar: 'JR',
+      content: 'As a landlord, the platform has helped me find quality tenants quickly. The verification process is thorough.',
+      rating: 5,
+      location: 'Makati City'
+    },
+    {
+      name: 'Sarah Chen',
+      role: 'University Student',
+      avatar: 'SC',
+      content: 'Perfect for students! Found an affordable bedspace near my university with all the amenities I needed.',
+      rating: 5,
+      location: 'Quezon City'
+    },
+  ];
+
+  const steps = [
+    {
+      number: '01',
+      title: 'Smart Search',
+      description: 'Use our AI-powered filters to find properties that match your exact needs and budget.',
+      icon: FiSearch,
+    },
+    {
+      number: '02',
+      title: 'Virtual Tours',
+      description: 'Take immersive 360° virtual tours and video calls with landlords from anywhere.',
+      icon: FiPlay,
+    },
+    {
+      number: '03',
+      title: 'Secure Booking',
+      description: 'Book instantly with our secure payment system and digital contract signing.',
+      icon: FiShield,
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-600 via-green-500 to-green-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Find Your Perfect
-              <span className="block text-green-100">Rental Home</span>
+    <div className="min-h-screen bg-white overflow-hidden">
+      {/* Hero Section - Modern Glass Effect */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-600 via-green-500 to-emerald-600">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-4 -left-4 w-72 h-72 bg-white/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+          <div className="absolute top-1/3 -right-4 w-72 h-72 bg-green-300/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-emerald-300/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto">
+            {/* Modern Badge */}
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white mb-8 animate-fade-in">
+              <FiThumbsUp className="w-4 h-4 mr-2" />
+              <span className="text-sm font-medium">Trusted by 10,000+ users</span>
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+              Find Your
+              <span className="block bg-gradient-to-r from-green-100 to-emerald-100 bg-clip-text text-transparent">
+                Dream Home
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-green-50 max-w-3xl mx-auto">
-              Discover apartments, bedspaces, and dorms across the Philippines with RentWise. 
-              Your trusted partner in finding the perfect rental property.
+            
+            <p className="text-xl md:text-2xl mb-10 text-green-50 max-w-3xl mx-auto leading-relaxed">
+              Discover premium apartments, modern bedspaces, and luxury dorms across the Philippines. 
+              Your perfect rental is just a click away.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
+
+            {/* Modern CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 to="/properties"
-                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors inline-flex items-center justify-center shadow-lg"
+                className="group relative inline-flex items-center px-8 py-4 bg-white text-green-600 rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105"
               >
-                <FiSearch className="w-5 h-5 mr-2" />
-                Browse Properties
+                <FiSearch className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                Explore Properties
+                <FiArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
+              
               <Link
                 to="/register"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-600 transition-colors inline-flex items-center justify-center"
+                className="group inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl font-semibold text-lg hover:bg-white hover:text-green-600 transition-all duration-300"
               >
                 <FiHome className="w-5 h-5 mr-2" />
-                List Your Property
+                List Property
               </Link>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="mt-12 flex items-center justify-center space-x-8 text-green-100">
+              <div className="flex items-center">
+                <FiCheckCircle className="w-5 h-5 mr-2" />
+                <span className="text-sm">100% Verified</span>
+              </div>
+              <div className="flex items-center">
+                <FiShield className="w-5 h-5 mr-2" />
+                <span className="text-sm">Secure Platform</span>
+              </div>
+              <div className="flex items-center">
+                <FiClock className="w-5 h-5 mr-2" />
+                <span className="text-sm">24/7 Support</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-green-50">
+      {/* Stats Section - Modern Cards */}
+      <section className="py-20 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center animate-slide-up" style={{animationDelay: `${index * 100}ms`}}>
-                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-700 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose RentWise?
-            </h2>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              We provide the most comprehensive and user-friendly platform for rental properties in the Philippines.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
               return (
-                <div
-                  key={index}
-                  className="bg-background-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-green-100"
+                <div 
+                  key={index} 
+                  className="bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                  style={{animationDelay: `${index * 100}ms`}}
                 >
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-primary-600" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">
-                    {feature.description}
-                  </p>
+                  <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-600 font-medium">
+                    {stat.label}
+                  </div>
                 </div>
               );
             })}
@@ -121,133 +196,185 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-20 bg-background-200">
+      {/* Features Section - Modern Grid */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-6">
+              Why Choose RentWise
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Experience the Future of
+              <span className="block bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                Property Rental
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We're revolutionizing how people find and rent properties with cutting-edge technology and user-centric design.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div
+                  key={index}
+                  className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-200 hover:-translate-y-1"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                  <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <FiArrowRight className="w-6 h-6 text-green-500" />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works - Modern Timeline */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-green-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               How It Works
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Getting started with RentWise is simple and straightforward.
+              Get started in minutes with our streamlined process
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <div key={index} className="relative">
+                  {/* Connection Line */}
+                  {index < steps.length - 1 && (
+                    <div className="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-green-300 to-emerald-300 z-0" 
+                         style={{ width: 'calc(100% - 4rem)' }}>
+                    </div>
+                  )}
+                  
+                  <div className="relative z-10 text-center">
+                    <div className="w-32 h-32 bg-gradient-to-br from-green-500 to-emerald-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl hover:scale-105 transition-transform duration-300">
+                      <Icon className="w-12 h-12 text-white" />
+                    </div>
+                    <div className="bg-white rounded-2xl p-6 shadow-lg">
+                      <div className="text-sm font-bold text-green-600 mb-2">{step.number}</div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials - Modern Cards */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              What Our Users Say
+            </h2>
+            <p className="text-xl text-gray-600">
+              Join thousands of satisfied users who found their perfect home
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:animate-float shadow-lg">
-                <span className="text-2xl font-bold text-white">1</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Search & Filter
-              </h3>
-              <p className="text-gray-600">
-                Use our advanced search filters to find properties that match your preferences and budget.
-              </p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:animate-float shadow-lg">
-                <span className="text-2xl font-bold text-white">2</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                View & Compare
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Browse detailed property listings with photos, amenities, and location information.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-white">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                Connect & Rent
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Contact verified landlords directly and secure your perfect rental property.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Find Your Next Home?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied tenants and landlords who trust RentWise for their rental needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/properties"
-              className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
-            >
-              Start Searching
-            </Link>
-            <Link
-              to="/register"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary-600 transition-colors inline-flex items-center justify-center"
-            >
-              Sign Up Free
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              What Our Users Say
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Maria Santos',
-                role: 'Tenant',
-                content: 'RentWise helped me find the perfect apartment in BGC. The search filters made it so easy to find exactly what I was looking for.',
-              },
-              {
-                name: 'John Rodriguez',
-                role: 'Landlord',
-                content: 'As a property owner, RentWise has been incredible for managing my listings and connecting with quality tenants.',
-              },
-              {
-                name: 'Sarah Chen',
-                role: 'Student',
-                content: 'Found an amazing bedspace near my university through RentWise. The platform is user-friendly and reliable.',
-              },
-            ].map((testimonial, index) => (
+            {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl"
+                className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
               >
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">{testimonial.name}</div>
+                    <div className="text-gray-600 text-sm">{testimonial.role}</div>
+                    <div className="text-green-600 text-sm">{testimonial.location}</div>
+                  </div>
+                </div>
+                
                 <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
+                  {[...Array(testimonial.rating)].map((_, i) => (
                     <FiStar key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                
+                <p className="text-gray-600 leading-relaxed italic">
                   "{testimonial.content}"
                 </p>
-                <div className="text-sm">
-                  <div className="font-semibold text-gray-900 dark:text-white">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-gray-500 dark:text-gray-400">
-                    {testimonial.role}
-                  </div>
-                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Modern Design */}
+      <section className="py-24 bg-gradient-to-br from-green-600 via-green-500 to-emerald-600 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="grid grid-cols-8 h-full">
+              {[...Array(64)].map((_, i) => (
+                <div key={i} className="border border-white/20"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Find Your
+            <span className="block">Perfect Home?</span>
+          </h2>
+          <p className="text-xl text-green-100 mb-10 max-w-2xl mx-auto">
+            Join thousands of satisfied tenants and landlords who trust RentWise for their rental needs.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/properties"
+              className="group inline-flex items-center px-8 py-4 bg-white text-green-600 rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-white/25 transition-all duration-300 hover:scale-105"
+            >
+              <FiSearch className="w-5 h-5 mr-2" />
+              Start Searching
+              <FiArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            
+            <Link
+              to="/register"
+              className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl font-semibold text-lg hover:bg-white hover:text-green-600 transition-all duration-300"
+            >
+              <FiUsers className="w-5 h-5 mr-2" />
+              Join Free
+            </Link>
+          </div>
+
+          {/* Social Proof */}
+          <div className="mt-12 text-green-100">
+            <p className="text-sm">Trusted by 10,000+ users • 4.9/5 rating • 24/7 support</p>
           </div>
         </div>
       </section>
