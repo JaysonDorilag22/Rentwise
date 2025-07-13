@@ -3,7 +3,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 // Configure axios defaults
-axios.defaults.baseURL = 'http://localhost:6000';
+axios.defaults.baseURL = 'http://localhost:5000';
 
 // Auth Context
 const AuthContext = createContext();

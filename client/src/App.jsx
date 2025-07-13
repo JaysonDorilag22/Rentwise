@@ -41,8 +41,13 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <AuthProvider>
-          <Router>
-            <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+          <Router
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+            }}
+          >
+            <div className="min-h-screen bg-gradient-to-br from-white via-green-50 to-green-100">
               <Navbar />
               <main className="pt-16"> {/* Account for fixed navbar */}
                 <Routes>
@@ -88,20 +93,31 @@ function App() {
                 toastOptions={{
                   duration: 4000,
                   style: {
-                    background: '#363636',
-                    color: '#fff',
+                    background: 'white',
+                    color: '#374151',
+                    border: '1px solid #d1fae5',
+                    borderRadius: '8px',
+                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
                   },
                   success: {
                     duration: 3000,
+                    style: {
+                      background: '#f0fdf4',
+                      border: '1px solid #22c55e',
+                    },
                     iconTheme: {
-                      primary: '#10B981',
+                      primary: '#22c55e',
                       secondary: '#fff',
                     },
                   },
                   error: {
                     duration: 4000,
+                    style: {
+                      background: '#fef2f2',
+                      border: '1px solid #ef4444',
+                    },
                     iconTheme: {
-                      primary: '#EF4444',
+                      primary: '#ef4444',
                       secondary: '#fff',
                     },
                   },

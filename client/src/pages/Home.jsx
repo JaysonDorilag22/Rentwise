@@ -34,30 +34,30 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+      <section className="bg-gradient-to-br from-green-600 via-green-500 to-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               Find Your Perfect
-              <span className="block text-yellow-400">Rental Home</span>
+              <span className="block text-green-100">Rental Home</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl mb-8 text-green-50 max-w-3xl mx-auto">
               Discover apartments, bedspaces, and dorms across the Philippines with RentWise. 
               Your trusted partner in finding the perfect rental property.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
               <Link
                 to="/properties"
-                className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors inline-flex items-center justify-center shadow-lg"
               >
                 <FiSearch className="w-5 h-5 mr-2" />
                 Browse Properties
               </Link>
               <Link
                 to="/register"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary-600 transition-colors inline-flex items-center justify-center"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-600 transition-colors inline-flex items-center justify-center"
               >
                 <FiHome className="w-5 h-5 mr-2" />
                 List Your Property
@@ -68,15 +68,15 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+              <div key={index} className="text-center animate-slide-up" style={{animationDelay: `${index * 100}ms`}}>
+                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-gray-600 dark:text-gray-400 font-medium">
+                <div className="text-gray-700 font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -86,13 +86,13 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why Choose RentWise?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
               We provide the most comprehensive and user-friendly platform for rental properties in the Philippines.
             </p>
           </div>
@@ -103,15 +103,15 @@ const Home = () => {
               return (
                 <div
                   key={index}
-                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl hover:shadow-lg transition-shadow"
+                  className="bg-background-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-green-100"
                 >
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-primary-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     {feature.description}
                   </p>
                 </div>
@@ -122,32 +122,32 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-background-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               How It Works
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Getting started with RentWise is simple and straightforward.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:animate-float shadow-lg">
                 <span className="text-2xl font-bold text-white">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 Search & Filter
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600">
                 Use our advanced search filters to find properties that match your preferences and budget.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:animate-float shadow-lg">
                 <span className="text-2xl font-bold text-white">2</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
